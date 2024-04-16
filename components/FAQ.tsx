@@ -55,7 +55,7 @@ const FAQ = () => {
             </li>
             <li>
               People interested in practicing product design and UI design (I
-              won't teach, but I can provide some guidance).
+              won&apos;t teach, but I can provide some guidance).
             </li>
           </ul>
         </div>
@@ -70,7 +70,7 @@ const FAQ = () => {
         </div>
         <Accordion type="single" collapsible>
           {faqs.map(({ question, answer }, i) => (
-            <AccordionItem value={`item-${i}`}>
+            <AccordionItem value={`item-${i}`} key={i}>
               <AccordionTrigger>{question}</AccordionTrigger>
               <AccordionContent>{answer}</AccordionContent>
             </AccordionItem>

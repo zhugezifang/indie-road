@@ -10,7 +10,7 @@ const Hero = () => (
       <div className="flex-1 min-w-0">
         <div className="mb-4 md:mb-8">
           <h2 className="text-3xl md:text-4xl xl:text-5xl mb-2 lg:mb-4 font-bold">
-            Chengpu's <span className="text-primary">Practical Group</span>
+            Chengpu&apos;s <span className="text-primary">Practical Group</span>
           </h2>
           <p className="text-base md:text-lg text-gray-400">
             A <span className="text-primary">free, self-training and mutual learning</span> community,
