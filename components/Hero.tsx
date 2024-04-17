@@ -26,14 +26,13 @@ const Hero = () => (
           </Button>
         </div>
       </div>
-      <div className="flex-shrink-0 md:max-w-sm lg:max-w-lg w-full h-full relative sm:px-4 md:px-12">
+      <div className="flex-shrink-0 md:max-w-sm lg:max-w-2xl w-full h-full relative sm:px-4 md:px-12">
         <Image
           src="/img-hero.svg"
           alt="hero-section-with-ctas-image"
-          width="512"
-          height="512"
+          width={844}
+          height={544}
         />
-        {/* <img alt="hero-section-with-ctas-image" loading="lazy" width="0" height="0" decoding="async" data-nimg="1" className="rounded-lg" style="color:transparent;width:100%;height:auto;object-fit:contain" src="/_next/static/media/image.10e99c15.svg"> */}
       </div>
     </div>
   </section>
