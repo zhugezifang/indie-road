@@ -62,6 +62,13 @@ const Header = () => (
           </a>
         </li>
         <li>
+          <a href="#use-cases">
+            <Button variant="ghost" data-active="false">
+              Use Cases
+            </Button>
+          </a>
+        </li>
+        <li>
           <a href="#features">
             <Button variant="ghost" data-active="false">
               Features
