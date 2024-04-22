@@ -53,5 +53,12 @@
     "q4": "Who would be suitable to join?",
     "a41": "Individuals who want to develop a product but currently lack clear goals.",
     "a42": "People interested in practicing product design and UI design (It won't teach, but I can provide some guidance)"
+  },
+  "cta": {
+    "title": "Call To Action",
+    "label": "Join the community",
+    "description1": "Connect with like-minded individuals who are passionate about the same things you are.",
+    "description2": "Share knowledge, work on projects, and grow together.",
+    "button": "Get Started"
   }
 }
