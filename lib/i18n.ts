@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
-
-export const locales = ["en-US", "en", "zh-CN", "zh"];
+export const locales = ["en", "zh"];
 
 export const localeNames: Record<string, string> = {
   en: "🇺🇸 English",
@@ -19,10 +17,6 @@ const dictionaries: Dictionaries = {
 };
 
 export const getDictionary = async (locale: string) => {
-  if (["zh-CN", "zh-TW", "zh-HK"].includes(locale)) {
-    return dictionaries["zh"]();
-  }
-
   if (dictionaries[locale]) {
     return dictionaries[locale]();
   }
