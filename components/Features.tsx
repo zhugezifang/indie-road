@@ -1,38 +1,38 @@
 import React from "react";
 
-const Features = () => {
+const Features = ({ dictionary: dic }: { dictionary: any }) => {
   const features = [
     {
-      title: 'Ability Enhanced',
-      content: 'Enhance your product design and UI design thinking',
+      title: dic.feature.feature1.title,
+      content: dic.feature.feature1.description,
     },
     {
-      title: 'Publicity',
-      content: 'You\'ll receive publicity for the work you complete',
+      title: dic.feature.feature2.title,
+      content: dic.feature.feature3.description,
     },
     {
-      title: 'Elimination Mechanism',
-      content: 'If you fail to complete tasks or share results in a timely manner, you may be eliminated from the group',
+      title: dic.feature.feature3.title,
+      content: dic.feature.feature3.description,
     },
     {
-      title: 'Friends',
-      content: 'You will get to know like-minded friends.',
+      title: dic.feature.feature4.title,
+      content: dic.feature.feature4.description,
     },
     {
-      title: 'Yield Returns',
-      content: 'Your investment can yield returns in both the open-source and commercial markets.',
+      title: dic.feature.feature5.title,
+      content: dic.feature.feature5.description,
     },
     {
-      title: 'indie developer',
-      content: 'Experience the directions many independent developers are exploring.',
-    }
-  ]
+      title: dic.feature.feature6.title,
+      content: dic.feature.feature6.description,
+    },
+  ];
   return (
     <section
       id="features"
       className="flex flex-col justify-center lg:max-w-7xl md:max-w-5xl w-[95%] mx-auto md:gap-14 py-6"
     >
-      <h2 className="text-4xl text-center font-bold">Features</h2>
+      <h2 className="text-4xl text-center font-bold">{dic.feature.title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {features?.map((feature, index) => (
           <div

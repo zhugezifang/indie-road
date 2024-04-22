@@ -8,55 +8,49 @@ import { cx } from "class-variance-authority";
 
 const link = cx("text-primary font-bold underline-offset-4 hover:underline");
 
-const FAQ = () => {
+const FAQ = ({ dictionary: dic }: { dictionary: any }) => {
   const faqs = [
     {
-      question: "What tools and frameworks will be used?",
+      question: dic.faq.q1,
       answer: (
         <span>
-          Please take a look at this{" "}
+          {dic.faq.a11}
           <a
             className={link}
             href="https://github.com/weijunext/indie-hacker-tools"
           >
-            list
-          </a>{" "}
-          of technology stack and tools.
+            {dic.faq.a12}
+          </a>
+          {dic.faq.a13}
         </span>
       ),
     },
     {
-      question: "Is it charged?",
-      answer: "Completely free of charge",
+      question: dic.faq.q2,
+      answer: dic.faq.a2,
     },
     {
-      question: "Which projects will be practiced?",
+      question: dic.faq.q3,
       answer: (
         <span>
-          Please take a look at this practical{" "}
+          {dic.faq.a31}
           <a
             className={link}
             href="https://wwglt1tbtro.feishu.cn/wiki/J76KwAJPhiQel8koowBcXqfPnzf"
           >
-            plan
+            {dic.faq.a32}
           </a>
+          {dic.faq.a33}
         </span>
       ),
     },
     {
-      question: "Who would be suitable to join?",
+      question: dic.faq.q4,
       answer: (
         <div>
-          <span>Target audience</span>
           <ul>
-            <li>
-              Individuals who want to develop a product but currently lack clear
-              goals.
-            </li>
-            <li>
-              People interested in practicing product design and UI design (I
-              won&apos;t teach, but I can provide some guidance).
-            </li>
+            <li>{dic.faq.a41}</li>
+            <li>{dic.faq.a42}</li>
           </ul>
         </div>
       ),
@@ -66,7 +60,7 @@ const FAQ = () => {
     <section id="faq" className="py-8 sm:py-16">
       <div className="max-w-4xl mx-auto px-6 lg:px-16">
         <div className="mb-8">
-          <h2 className="text-4xl text-center font-bold">FAQ</h2>
+          <h2 className="text-4xl text-center font-bold">{dic.faq.title}</h2>
         </div>
         <Accordion type="single" collapsible>
           {faqs.map(({ question, answer }, i) => (

@@ -3,7 +3,44 @@
 import * as React from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { useParams, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { localeNames } from "@/lib/i18n";
+
+const InternationalizationSelect = () => {
+  const { lang }: { lang: string } = useParams();
+  const router = useRouter();
+
+  const onValueChange = (value: string) => {
+    console.log(value);
+    router.push(value);
+  };
+
+  return (
+    <Select defaultValue={lang} onValueChange={onValueChange}>
+      <SelectTrigger>
+        <SelectValue placeholder="Theme" />
+      </SelectTrigger>
+      <SelectContent>
+        {Object.keys(localeNames).map((locale: string) => {
+          const name = localeNames[locale];
+          return (
+            <SelectItem key={locale} value={locale}>
+              {name}
+            </SelectItem>
+          );
+        })}
+      </SelectContent>
+    </Select>
+  );
+};
 
 const ModeToggle = () => {
   const { theme, setTheme } = useTheme();
@@ -41,65 +78,70 @@ const ModeToggle = () => {
   );
 };
 
-const Header = () => (
-  <header>
-    <div className="max-w-screen-xl mx-auto px-4 flex items-center h-16">
-      <div>
-        <div className="select-none flex items-center">
-          <div className="mr-1">
-            <Image src="/logo.svg" alt="Logo" width={36} height={36} />
-            {/* <img alt="Tailsc Logo" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" style="color:transparent" src="/logo.svg"> */}
+const Header = ({ dictionary: dic }: { dictionary: any }) => {
+  return (
+    <header>
+      <div className="max-w-screen-xl mx-auto px-4 flex items-center h-16">
+        <div>
+          <div className="select-none flex items-center">
+            <div className="mr-1">
+              <Image src="/logo.svg" alt="Logo" width={36} height={36} />
+              {/* <img alt="Tailsc Logo" loading="lazy" width="36" height="36" decoding="async" data-nimg="1" style="color:transparent" src="/logo.svg"> */}
+            </div>
+            <div className="text-xl font-bold">Indie Road</div>
           </div>
-          <div className="text-xl font-bold">Indie Road</div>
+        </div>
+        <ul className="hidden md:flex flex-1 min-w-0 justify-center items-center gap-1 !text-base">
+          {/* <li>
+            <a href="#hero">
+              <Button variant="ghost" className="text-base" data-active="false">
+                Home
+              </Button>
+            </a>
+          </li> */}
+          <li>
+            <a href="#use-cases">
+              <Button variant="ghost" className="text-base" data-active="false">
+                {dic.useCase.title}
+              </Button>
+            </a>
+          </li>
+          <li>
+            <a href="#features">
+              <Button variant="ghost" className="text-base" data-active="false">
+                {dic.feature.title}
+              </Button>
+            </a>
+          </li>
+          <li>
+            <a href="#faq">
+              <Button variant="ghost" className="text-base" data-active="false">
+                {dic.faq.title}
+              </Button>
+            </a>
+          </li>
+        </ul>
+        <div className="grow md:hidden"></div>
+        <div className="flex items-center gap-2 text-xl">
+          <span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              viewBox="0 0 1024 1024"
+            >
+              <path
+                fill="currentColor"
+                d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5C64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9c26.4 39.1 77.9 32.5 104 26c5.7-23.5 17.9-44.5 34.7-60.8c-140.6-25.2-199.2-111-199.2-213c0-49.5 16.3-95 48.3-131.7c-20.4-60.5 1.9-112.3 4.9-120c58.1-5.2 118.5 41.6 123.2 45.3c33-8.9 70.7-13.6 112.9-13.6c42.4 0 80.2 4.9 113.5 13.9c11.3-8.6 67.3-48.8 121.3-43.9c2.9 7.7 24.7 58.3 5.5 118c32.4 36.8 48.9 82.7 48.9 132.3c0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9c177.1-59.7 304.6-227 304.6-424.1c0-247.2-200.4-447.3-447.5-447.3"
+              />
+            </svg>
+          </span>
+          <ModeToggle />
+          <InternationalizationSelect />
         </div>
       </div>
-      <ul className="hidden md:flex flex-1 min-w-0 justify-center items-center gap-1 !text-base">
-        <li>
-          <a href="#hero">
-            <Button variant="ghost" data-active="false">
-              Home
-            </Button>
-          </a>
-        </li>
-        <li>
-          <a href="#use-cases">
-            <Button variant="ghost" data-active="false">
-              Use Cases
-            </Button>
-          </a>
-        </li>
-        <li>
-          <a href="#features">
-            <Button variant="ghost" data-active="false">
-              Features
-            </Button>
-          </a>
-        </li>
-        <li>
-          <a href="#faq">
-            <Button variant="ghost" data-active="false">
-              FAQ
-            </Button>
-          </a>
-        </li>
-      </ul>
-      <div className="grow md:hidden"></div>
-      <div className="flex items-center gap-2 text-xl">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          viewBox="0 0 1024 1024"
-        >
-          <path
-            fill="currentColor"
-            d="M511.6 76.3C264.3 76.2 64 276.4 64 523.5C64 718.9 189.3 885 363.8 946c23.5 5.9 19.9-10.8 19.9-22.2v-77.5c-135.7 15.9-141.2-73.9-150.3-88.9C215 726 171.5 718 184.5 703c30.9-15.9 62.4 4 98.9 57.9c26.4 39.1 77.9 32.5 104 26c5.7-23.5 17.9-44.5 34.7-60.8c-140.6-25.2-199.2-111-199.2-213c0-49.5 16.3-95 48.3-131.7c-20.4-60.5 1.9-112.3 4.9-120c58.1-5.2 118.5 41.6 123.2 45.3c33-8.9 70.7-13.6 112.9-13.6c42.4 0 80.2 4.9 113.5 13.9c11.3-8.6 67.3-48.8 121.3-43.9c2.9 7.7 24.7 58.3 5.5 118c32.4 36.8 48.9 82.7 48.9 132.3c0 102.2-59 188.1-200 212.9a127.5 127.5 0 0 1 38.1 91v112.5c.8 9 0 17.9 15 17.9c177.1-59.7 304.6-227 304.6-424.1c0-247.2-200.4-447.3-447.5-447.3"
-          />
-        </svg>
-        <ModeToggle />
-      </div>
-    </div>
-  </header>
-);
+    </header>
+  );
+};
 
 export default Header;

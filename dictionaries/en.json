@@ -1,0 +1,57 @@
+{
+  "hero": {
+    "title1": "Chengpu's",
+    "title2": "Practical Group",
+    "description1": "A",
+    "description2": " free, self-training and mutual learning ",
+    "description3": "community,",
+    "description4": "aimed at refining their ideas, enhancing their product design and UI design skills",
+    "cta": "Join us now"
+  },
+  "useCase": {
+    "title": "Use Cases"
+  },
+  "feature": {
+    "title": "Features",
+    "feature1": {
+      "title": "Ability Enhanced",
+      "description": "Enhance your product design and UI design thinking"
+    },
+    "feature2": {
+      "title": "Publicity",
+      "description": "You'll receive publicity for the work you complete"
+    },
+    "feature3": {
+      "title": "Friends",
+      "description": "You will get to know like-minded friends."
+    },
+    "feature4": {
+      "title": "Elimination Mechanism",
+      "description": "If you fail to complete tasks or share results in a timely manner, you may be eliminated from the group"
+    },
+    "feature5": {
+      "title": "Yield Returns",
+      "description": "Your investment can yield returns in both the open-source and commercial markets."
+    },
+    "feature6": {
+      "title": "indie developer",
+      "description": "Experience the directions many independent developers are exploring."
+    }
+  },
+  "faq": {
+    "title": "FAQ",
+    "q1": "What tools and frameworks will be used?",
+    "a11": "Please take a look at this ",
+    "a12": "list",
+    "a13": "of technology stack and tools.",
+    "q2": "Is it charged?",
+    "a2": "Completely free of charge.",
+    "q3": "Which projects will be practiced?",
+    "a31": "Please take a look at this practical ",
+    "a32": "plan",
+    "a33": ".",
+    "q4": "Who would be suitable to join?",
+    "a41": "Individuals who want to develop a product but currently lack clear goals.",
+    "a42": "People interested in practicing product design and UI design (It won't teach, but I can provide some guidance)"
+  }
+}
