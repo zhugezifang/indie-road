@@ -4,9 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import GoogleAnalytics from "../GoogleAnalytics";
 import "../globals.css";
 
-export const config = {
-  runtime: 'edge',
-};
+export const runtime = "edge";
 
 const inter = Inter({ subsets: ["latin"] });
 

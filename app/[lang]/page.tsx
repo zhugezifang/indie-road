@@ -7,9 +7,7 @@ import Footer from "@/components/footer";
 import CTA from "@/components/cta";
 import { getDictionary } from "@/lib/i18n";
 
-export const config = {
-  runtime: 'edge',
-};
+export const runtime = "edge";
 
 export default async function Home({ params: { lang }}: { params: { lang: string } }) {
   const dic = await getDictionary(lang);
